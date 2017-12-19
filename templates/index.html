@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flagger</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/app.css') }}">
+</head>
+
+<body>
+<!-- .container is main centered wrapper -->
+<div class="container">
+    <div class="row">
+        <div class="eleven columns">
+            <h1>Flagger</h1>
+            <hr>
+            <form action="/upload" method="post" enctype="multipart/form-data" >
+                <span class="btn btn-default btn-file">
+                    Browse <input type="file" name="image">
+                </span>
+                <input type="submit" value="Upload your flag" class="btn btn-primary button">
+            </form>
+        </div>
+    </div>
+    <hr>
+    <p>Meet Flagger a neural net trained to tell you if your flag is a good <strike>boy</strike> flag.</p>
+    <p><strong>Note:</strong> Upload size is limited to 1MB. Also I wrote this fast and sloppy so if there is whitespace in your file name it wont like it. (I'll fix this when I get time).</p>
+    <p>You can help Flagger get smarter by contributing to his training data set. Just email images of "good" and "bad" flags to <a href="mailto:micah.denn@gmail.com" target="_top">micah.denn@gmail.com</a>.</p>
+    <hr>
+        <table class="u-full-width">
+        <tbody>
+            <tr>
+            <td><h5>{{ r }}</h5></td>
+            <td><h5>{{ c }}</h5></td>
+            <td><h5>{{ t }}</h5></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <img class=u-full-width src="../static/{{ variable }}" alt="flag">
+
+</div>
+</body>
+</html>
